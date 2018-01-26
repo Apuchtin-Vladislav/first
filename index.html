@@ -2,62 +2,39 @@
 <html>
 <head>
     <script>
-        // const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        // const type = connection.type || connection.effectiveType;
-        //
-        // function updateConnectionStatus() {
-        //     console.log("Connection type changed from " + type + " to " + connection.type);
-        // }
-        //
-        // console.log(type, connection, NetworkInformation);
-        //
-        // connection.addEventListener('typechange', updateConnectionStatus);
-        //
-        // const xhr = new XMLHttpRequest();
-        // xhr.open('POST', './');
-        // xhr.seenBytes = 0;
-        //
-        // xhr.onreadystatechange = function() {
-        //     if(xhr.readyState > 2) {
-        //         const newData = xhr.responseText.substr(xhr.seenBytes);
-        //         xhr.seenBytes = xhr.responseText.length;
-        //
-        //         alert('newData' + newData);
-        //     }
-        // };
-        //
-        // xhr.send();
-        const getPing = () => {
-            let start;
-            const client = getClient();
-            client.onreadystatechange = () => {
-                if (client.readyState > 0) {
-                    pingDone(start);
-                    client.onreadystatechange = null;
-                }
-            };
-
-            start = new Date();
-            client.open("HEAD", "/ping.txt");
-            client.send();
+        const generateCss = type => {
+            const minCss = document.createElement('link');
+            minCss.rel = "stylesheet";
+            minCss.href = `css/cosmetic${type ? "-min" : ""}.css`;
+            document.head.appendChild(minCss);
         };
 
-        const pingDone = start => {
-            const done = new Date();
-            const ms = done.valueOf() - start.valueOf();
-            alert(ms + "ms ping time");
-        };
+        (() => {
+            const min_4g = 5;
+            const speed = navigator.connection.downlink;
+            const type = navigator.connection.effectiveType;
 
-        const getClient = () => {
-            if (window.XMLHttpRequest)
-                return new XMLHttpRequest();
+            if (!type && speed && speed <= min_4g) {
+                generateCss(true);
+            } else {
+                let start = window.performance.now();
+                const ajax = (a, b, c) => {
+                    c = new XMLHttpRequest;
+                    c.open('GET', a);
+                    c.onload = b;
+                    c.send()
+                };
+                ajax('js/1.txt', function () {
+                    const Delay = window.performance.now() - start;
+                    if (Delay <= 700) {
+                        generateCss(false);
+                    } else {
+                        generateCss(true);
+                    }
+                });
+            }
 
-            if (window.ActiveXObject)
-                return new ActiveXObject('MSXML2.XMLHTTP.3.0');
-
-            throw("No XMLHttpRequest Object Available.");
-        };
-        getPing();
+        })();
     </script>
     <meta name="language" content="English">
     <meta http-equiv="content-type" charset="utf-8">
@@ -71,13 +48,11 @@
     <link rel="shortcut icon" href="images/about_logo.png" type="image/png">
 
     <link rel="stylesheet" href="font/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <!--TODO - проверить скорость соединения и если она маленькая то загружать залитые цветом
-        TODO - бэкграунды и не подгружать фонт с гугла-->
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base_modules.css">
     <link rel="stylesheet" href="css/project_modules.css">
-    <link rel="stylesheet" href="css/cosmetic.css">
+
 </head>
 <body>
 <header class="main-header">
@@ -297,13 +272,16 @@
             </figure>
             <figure class="teamSPD-U-person">
                 <img src="images/team/allteam.png" class="teamSPD-U-person-img" alt="show all team">
-                <figcaption class="teamSPD-U-person-shadow"><span class="teamSPD-U-person-name font-s">ВСЯ КОМАНДА</span>
+                <figcaption class="teamSPD-U-person-shadow"><span
+                        class="teamSPD-U-person-name font-s">ВСЯ КОМАНДА</span>
                 </figcaption>
             </figure>
         </section>
     </section>
-    <img src="images/Polygon.png" class="absoluteImage absoluteImage_left absoluteImage_big absoluteImage_behind" alt="polygon">
-    <img src="images/Polygon1.png" class="absoluteImage absoluteImage_right absoluteImage_small absoluteImage_behind" alt="polygon">
+    <img src="images/Polygon.png" class="absoluteImage absoluteImage_left absoluteImage_big absoluteImage_behind"
+         alt="polygon">
+    <img src="images/Polygon1.png" class="absoluteImage absoluteImage_right absoluteImage_small absoluteImage_behind"
+         alt="polygon">
     <section class="container content-block faqSPD-U">
         <h2 class="faqSPD-U-main-header font-xxl">FAQ</h2>
         <h3 class="faqSPD-U-secondary-header font-m">У вас виникли питання? Ми з радістю вам допоможемо.</h3>
@@ -381,13 +359,15 @@
             </details>
         </article>
     </section>
-    <img src="images/Polygon1.png" class="absoluteImage absoluteImage_right absoluteImage_small absoluteImage_behind" alt="polygon">
+    <img src="images/Polygon1.png" class="absoluteImage absoluteImage_right absoluteImage_small absoluteImage_behind"
+         alt="polygon">
 
     <section class="container content-block partnersSPD-U">
         <h2 class="partnersSPD-U-main-header font-xxl">НАШІ ПАРТНЕРИ</h2>
         <h3 class="partnersSPD-U-secondary-header">Ми вдячні нашим партнерам за підтримку <br>проекту
             SPD-University</h3>
-        <img src="images/Polygon.png" class="absoluteImage absoluteImage_left absoluteImage_big absoluteImage_behind" alt="polygon">
+        <img src="images/Polygon.png" class="absoluteImage absoluteImage_left absoluteImage_big absoluteImage_behind"
+             alt="polygon">
         <img class="partnersSPD-U-img" src="images/jetbrains-variant-4.png" alt="JetBrains logo">
     </section>
 </main>
@@ -398,13 +378,14 @@
         <section class="middle-block">
             <aside class="contactsSPD-U-widget contactsSPD-U-widget_first">
                 <img src="images/logo-footer.png" alt="SPD-University logo">
-                <p class="contactsSPD-U-info font-xs">СПД-університет - найкращий спосіб прокачати свої знання у сфері ІТ</p>
+                <p class="contactsSPD-U-info font-xs">СПД-університет - найкращий спосіб прокачати свої знання у сфері
+                    ІТ</p>
             </aside>
         </section>
         <section class="middle-block">
             <aside class="contactsSPD-U-widget">
                 <h5 class="contactsSPD-U-contact font-xs">КОНТАКТИ</h5>
-                <p class="contactsSPD-U-number font-xs" >(063) 392 48 33</p>
+                <p class="contactsSPD-U-number font-xs">(063) 392 48 33</p>
                 <a class="contactsSPD-U-mail font-xs" href="mailto:info@spd-university.com">info@spd-university.com</a>
             </aside>
         </section>
