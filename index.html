@@ -24,9 +24,13 @@
                     c.onload = b;
                     c.send()
                 };
-                ajax('js/1.txt', function () {
+                ajax('js/1.txt', () => {
                     const Delay = window.performance.now() - start;
                     if (Delay <= 700) {
+                        const bigImage = document.createElement('link');
+                        bigImage.rel = "prefetch";
+                        bigImage.href = "/images/Layer.png";
+                        document.head.appendChild(bigImage);
                         generateCss(false);
                     } else {
                         generateCss(true);
@@ -45,10 +49,12 @@
                     максимально нівелювати той самий розрив між теоретичними знаннями та досвідом, необхідним для працевлаштування">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="prerender" href="https://apuchtin-vladislav.github.io/first/">
+    <link href='https://fonts.gstatic.com/s/sourcesanspro/v11/' rel='preconnect' crossorigin>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/' rel='preconnect' crossorigin>
+
     <link rel="shortcut icon" href="images/about_logo.png" type="image/png">
-
     <link rel="stylesheet" href="font/font-awesome.min.css">
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base_modules.css">
     <link rel="stylesheet" href="css/project_modules.css">
