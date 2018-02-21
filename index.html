@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script async>
+    <script>
         const generateCss = type => {
             const minCss = document.createElement('link');
             minCss.rel = "stylesheet";
@@ -29,7 +29,7 @@
                     if (Delay <= 700) {
                         const bigImage = document.createElement('link');
                         bigImage.rel = "prefetch";
-                        bigImage.href = "/first/images/Layer.png";
+                        bigImage.href = "./images/Layer.png";
                         document.head.appendChild(bigImage);
                         generateCss(false);
                     } else {
@@ -48,16 +48,22 @@
     <meta name="description" content="SPD-University - це проект, що допомагає талановитій молоді, яка хоче пов'язати своє життя з ІТ,
                     максимально нівелювати той самий розрив між теоретичними знаннями та досвідом, необхідним для працевлаштування">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="prerender" href="https://apuchtin-vladislav.github.io/first/">
-    <link href='https://fonts.gstatic.com/s/sourcesanspro/v11/' rel='preconnect' crossorigin>
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/' rel='preconnect' crossorigin>
+    <link href="https://fonts.gstatic.com/s/sourcesanspro/v11/" rel="preconnect" crossorigin="">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/" rel="preconnect" crossorigin="">
 
     <link rel="shortcut icon" href="images/about_logo.png" type="image/png">
-    <link rel="stylesheet" href="font/font-awesome.min.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/base_modules.css">
-    <link rel="stylesheet" href="css/project_modules.css">
+    <style type="text/css">
+        @font-face{font-family:FontAwesome;src:url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0);src:url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format('embedded-opentype'),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0) format('woff2'),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'),url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-bars:before{content:"\f0c9"}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlAC5S7WFEeHRqL6ObGQGT8o.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlMgmx_L9kV4w6g8dYQOLFUI.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlMODs9238LZG2v64UiBIjng.woff2) format('woff2');unicode-range:U+1F00-1FFF}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlFjqPhnWKseBf12Mt9_m7kc.woff2) format('woff2');unicode-range:U+0370-03FF}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNOAHFN6BivSraYkjhveRHY.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlC2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro Regular'),local('SourceSansPro-Regular'),url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215}*{-webkit-box-sizing:border-box;box-sizing:border-box}a{text-decoration:none}*,button{outline:0}a,body,h3,h4,header,html,i,img,li,nav,ol,p,section,ul{margin:0;padding:0;border:0;font-size:100%;font-family:'Source Sans Pro',sans-serif;letter-spacing:1px;vertical-align:baseline}header,nav,section{display:block}body{line-height:1;overflow-x:hidden}ol,ul{list-style:none}.container,.container-fluid{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}.content-block{padding-top:15px;padding-bottom:15px}.absoluteImage,.absoluteImage_left,.absoluteImage_right{position:absolute;max-width:100%}@media (max-width:768px){.absoluteImage,.absoluteImage_left,.absoluteImage_right{display:none}}.absoluteImage_right{padding-top:40px;right:0}.absoluteImage_left{left:0}.absoluteImage_small{height:25%}.absoluteImage_big{height:30%}.absoluteImage_behind{z-index:-2}.main-header,.main-navbar,.main-navbar>.main-navbar-header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.main-header,.main-navbar{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.main-header,.main-navbar{-webkit-box-orient:horizontal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.main-header,.main-navbar{-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.main-navbar{-webkit-box-orient:horizontal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;padding:0 135px;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;position:fixed;width:100%;z-index:1030}.main-navbar>.main-navbar-header>.navbar-toggle{margin-right:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;border-width:1px;-webkit-border-radius:4px;border-radius:4px;display:none}@media (max-width:768px){.main-navbar>.main-navbar-header>.navbar-toggle{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}@media (max-width:300px){.main-navbar>.main-navbar-header>.navbar-toggle{position:absolute;right:0}}@media (max-width:768px){.main-navbar>.main-navbar-header{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;width:100%;border-bottom-width:1px}}.main-navbar>.main-navbar-links{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}@media (max-width:1050px){.main-navbar{padding:0}}@media (max-width:768px){.main-navbar{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start}}.main-header-section,.main-navbar-links>.main-navbar-list{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}@media (max-width:768px){.main-navbar-links>.main-navbar-list{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}}.main-navbar-list>.navbar-link{padding:19px}.main-header-section{-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;padding:90px 0 0;text-align:center}.main-header-section>.main-header-section-info{margin:20px 2px}.main-header-section>.main-header-section-description{margin:5px 0 15px;width:50%}@media (max-width:1050px){.main-header-section>.main-header-section-description{width:75%}}@media (max-width:768px){.main-header-section>.main-header-section-description{width:95%}}@media (max-width:550px){.spdu-logo-img{max-width:80%}}.aboutSPD-U>.aboutSPD-U-secondary-header{margin:20px 0;text-align:center}.aboutSPD-U-courses{display:none}@media (max-width:1050px){.aboutSPD-U-courses{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}}.aboutSPD-U-all-courses-title{margin:10px 0}.aboutSPD-U-all-courses-list,.aboutSPD-U-course{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.aboutSPD-U-course{-webkit-box-orient:horizontal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-flex-basis:100px;-ms-flex-preferred-size:100px;flex-basis:100px;text-align:center;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;margin:0 20%}.aboutSPD-U-course>.aboutSPD-U-course-link{width:25%}.aboutSPD-U-course>.aboutSPD-U-course-line{border-top-width:1px;border-bottom:none;margin:0;width:80px;min-width:80px}.aboutSPD-U-course>.aboutSPD-U-course-icon{width:80px;max-width:80px;height:80px}@media (max-width:1050px){.aboutSPD-U-course{margin:0 10%}}@media (max-width:768px){.aboutSPD-U-course{margin:0}}@media (max-width:550px){.aboutSPD-U-course{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}}.faqSPD-U-answer{margin:20px 0 0 16px}.faqSPD-U-answer_list>li{padding:20px 0}@media (max-width:768px){.mobile-menu{position:absolute;width:80%}.mobile-menu_top{margin-top:64px;width:100%;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;text-align:center}.mobile-menu_top{top:-500px}}
+    </style>
+    <link rel="preload" href="font/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="font/font-awesome.min.css"></noscript>
+    <link rel="preload" href="css/reset.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/reset.css"></noscript>
+    <link rel="preload" href="css/base_modules.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/base_modules.css"></noscript>
+    <link rel="preload" href="css/project_modules.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/project_modules.css"></noscript>
+    <script>!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
 
 </head>
 <body>
@@ -278,16 +284,13 @@
             </figure>
             <figure class="teamSPD-U-person">
                 <img src="images/team/allteam.png" class="teamSPD-U-person-img" alt="show all team">
-                <figcaption class="teamSPD-U-person-shadow"><span
-                        class="teamSPD-U-person-name font-s">ВСЯ КОМАНДА</span>
+                <figcaption class="teamSPD-U-person-shadow"><span class="teamSPD-U-person-name font-s">ВСЯ КОМАНДА</span>
                 </figcaption>
             </figure>
         </section>
     </section>
-    <img src="images/Polygon.png" class="absoluteImage absoluteImage_left absoluteImage_big absoluteImage_behind"
-         alt="polygon">
-    <img src="images/Polygon1.png" class="absoluteImage absoluteImage_right absoluteImage_small absoluteImage_behind"
-         alt="polygon">
+    <img src="images/Polygon.png" class="absoluteImage absoluteImage_left absoluteImage_big absoluteImage_behind" alt="polygon">
+    <img src="images/Polygon1.png" class="absoluteImage absoluteImage_right absoluteImage_small absoluteImage_behind" alt="polygon">
     <section class="container content-block faqSPD-U">
         <h2 class="faqSPD-U-main-header font-xxl">FAQ</h2>
         <h3 class="faqSPD-U-secondary-header font-m">У вас виникли питання? Ми з радістю вам допоможемо.</h3>
@@ -365,15 +368,13 @@
             </details>
         </article>
     </section>
-    <img src="images/Polygon1.png" class="absoluteImage absoluteImage_right absoluteImage_small absoluteImage_behind"
-         alt="polygon">
+    <img src="images/Polygon1.png" class="absoluteImage absoluteImage_right absoluteImage_small absoluteImage_behind" alt="polygon">
 
     <section class="container content-block partnersSPD-U">
         <h2 class="partnersSPD-U-main-header font-xxl">НАШІ ПАРТНЕРИ</h2>
         <h3 class="partnersSPD-U-secondary-header">Ми вдячні нашим партнерам за підтримку <br>проекту
             SPD-University</h3>
-        <img src="images/Polygon.png" class="absoluteImage absoluteImage_left absoluteImage_big absoluteImage_behind"
-             alt="polygon">
+        <img src="images/Polygon.png" class="absoluteImage absoluteImage_left absoluteImage_big absoluteImage_behind" alt="polygon">
         <img class="partnersSPD-U-img" src="images/jetbrains-variant-4.png" alt="JetBrains logo">
     </section>
 </main>
